@@ -1,0 +1,4 @@
+luma.oled
+RPi.GPIO
+python-mpd2
+Pillow
