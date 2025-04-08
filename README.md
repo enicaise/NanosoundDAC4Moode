@@ -23,12 +23,16 @@ Afficheur OLED personnalisé pour MoOde Audio avec boutons GPIO pour contrôler 
 git clone https://github.com/votre-utilisateur/moode-oled-display.git
 cd moode-oled-display
 ```
-### 2. Copie des fichiers
+### 2. Installe les dépendances
+```bash
+pip install -r requirements.txt
+```
+### 3. Copie des fichiers
 ```bash
 sudo cp -r oled_display /var/local/
 sudo cp systemd/oled-display.service /etc/systemd/system/
 ```
-### 3. Activation du service
+### 4. Activation du service
 ```bash
 sudo systemctl daemon-reexec
 sudo systemctl enable oled-display.service
