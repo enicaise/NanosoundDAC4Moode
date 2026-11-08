@@ -1,0 +1,23 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+configure)
+    # Ancienne installation manuelle (README d'avant le paquet)
+    if [ -f /etc/systemd/system/oled-display.service ]; then
+        systemctl disable --now oled-display.service || true
+        rm -f /etc/systemd/system/oled-display.service
+    fi
+
+    if command -v raspi-config >/dev/null 2>&1 && [ "$(raspi-config nonint get_i2c)" != "0" ]; then
+        raspi-config nonint do_i2c 0
+        echo "nanosound-oled : I2C activé, redémarrez le player (sudo reboot)."
+    fi
+
+    systemctl daemon-reload
+    systemctl enable nanosound-oled.service
+    systemctl restart nanosound-oled.service || true
+    ;;
+esac
+
+exit 0

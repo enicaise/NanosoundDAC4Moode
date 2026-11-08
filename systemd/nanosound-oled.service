@@ -1,0 +1,15 @@
+[Unit]
+Description=OLED Display for MoOde (NanoSound DAC)
+After=network.target sound.target mpd.service
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/lib/nanosound-oled/oled_display.py
+WorkingDirectory=/usr/lib/nanosound-oled
+Restart=always
+RestartSec=5
+User=root
+Group=root
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

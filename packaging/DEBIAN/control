@@ -1,0 +1,12 @@
+Package: nanosound-oled
+Version: @VERSION@
+Section: sound
+Priority: optional
+Architecture: all
+Depends: python3, python3-luma.oled, python3-pil, python3-mpd, python3-rpi.gpio | python3-rpi-lgpio, fonts-dejavu-core
+Maintainer: E. Nicaise <emmanuel.nicaise@apalala.be>
+Homepage: https://github.com/enicaise/NanosoundDAC4Moode
+Description: Afficheur OLED et boutons NanoSound DAC pour moOde Audio
+ Affiche titre, artiste, statut et débit sur l'écran OLED SH1106 (I2C)
+ du NanoSound DAC et gère ses boutons GPIO (lecture/pause, stop,
+ radio suivante/précédente, extinction) via MPD.

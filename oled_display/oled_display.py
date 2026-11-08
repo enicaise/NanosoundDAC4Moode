@@ -3,7 +3,6 @@
 
 import time
 import os
-import numpy as np
 from luma.core.render import canvas
 from luma.core.interface.serial import i2c
 from luma.oled.device import sh1106
